@@ -1,5 +1,5 @@
 String[] events;
 
 void dataHandling() {
-  events = loadStrings()
+  events = loadStrings("DataFile.txt");
 }

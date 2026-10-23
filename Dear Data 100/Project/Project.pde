@@ -1,23 +1,22 @@
+
 boolean pageChange = true;
 
+BlackHole hole;
 
 void setup() {
   size(1400, 1400);
-  background(1);
+  hole = new BlackHole(width / 2, height / 2, 100);
 }
-
-
 void draw() {
-  println("1");
+  if (pageChange == true) {
+    background(255);  // Interesting events
+  } else {
+    background(0);    // Mundane events
+  }
+
+  hole.HoleAndLineDisplay(pageChange);
 }
 
-void mouseClicked(){
-  if (pageChange == true) {
-    background(0);
-    pageChange = false;
-  } else {
-    pageChange = true;
-    background(255);
-    
-  }
+void mouseClicked() {
+  pageChange = !pageChange;
 }
